@@ -16,7 +16,7 @@ function GrovePiSensors(dhtPin = 2, ultrasonicPin = 4, lightPin = 2,debug = true
 
 GrovePiSensors.prototype.getSoundData = function()
 {
-  var res += this.soundSensor.read();
+  var res = this.soundSensor.read();
   if(this.debug)
   {
     var text = 'Sound level: ' + res;
