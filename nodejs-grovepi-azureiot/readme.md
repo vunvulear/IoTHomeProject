@@ -7,3 +7,5 @@ In this moment we have implemented:
 <li>Read Light data</li>
 <li>Read Sound data (not working as expected)</li>
 </ls>
+
+You can find more on my blog: http://vunvulearadu.blogspot.ro/2016/12/iot-home-project-part-3-nodejs-module.html
