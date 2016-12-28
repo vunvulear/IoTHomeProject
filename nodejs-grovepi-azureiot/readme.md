@@ -6,6 +6,7 @@ In this moment we have implemented:
 <li>Read Ultrasonic sensor data</li>
 <li>Read Light data</li>
 <li>Read Sound data (not working as expected)</li>
+<li>Module that register device to Azure IoT Hub and send messages </li>
 </ls>
 
 You can find more on my blog: http://vunvulearadu.blogspot.ro/2016/12/iot-home-project-part-3-nodejs-module.html
