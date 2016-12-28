@@ -4,9 +4,9 @@ var DHTDigitalSensor = GrovePi.sensors.DHTDigital;
 var UltrasonicDigitalSensor = GrovePi.sensors.UltrasonicDigital;
 
 var LightAnalogSensor = GrovePi.sensors.LightAnalog;
-var AnalogSensor =GrovePi.sensors.base.Analog;
+var AnalogSensor = GrovePi.sensors.base.Analog;
 
-function GrovePiSensors(dhtPin = 2, ultrasonicPin = 4, lightPin = 2, soundPin = 0, debug = true){
+function GrovePiSensors(dhtPin = 2, ultrasonicPin = 4, lightPin = 2, soundPin = 0, debug = true) {
   this.debug = debug;
   this.tempHumSensor = new DHTDigitalSensor(ultrasonicPin);
   this.ultrasonicSensor = new UltrasonicDigitalSensor(dhtPin);
@@ -14,71 +14,62 @@ function GrovePiSensors(dhtPin = 2, ultrasonicPin = 4, lightPin = 2, soundPin = 
   this.soundSensor = new AnalogSensor(soundPin);
 }
 
-GrovePiSensors.prototype.getSoundData = function()
-{
+GrovePiSensors.prototype.getSoundData = function () {
   var res = this.soundSensor.read();
-  if(this.debug)
-  {
+  if (this.debug) {
     var text = 'Sound level: ' + res;
     console.log(text);
   }
 
   return {
-    soundLevel : res
+    soundLevel: res
   };
 }
 
-GrovePiSensors.prototype.getTempAndHumData = function()
-{
+GrovePiSensors.prototype.getTempAndHumData = function () {
   var res = this.tempHumSensor.read();
-  var temp= res[0];
+  var temp = res[0];
   var humidity = res[1];
 
-  if(this.debug)
-  {
+  if (this.debug) {
     var text = 'T: ' + temp + ' H: ' + humidity;
     console.log(text);
   }
 
   return {
-    temp : temp,
-    humidity : humidity }
+    temp: temp,
+    humidity: humidity
+  }
 }
 
-GrovePiSensors.prototype.getDistanceData = function()
-{
+GrovePiSensors.prototype.getDistanceData = function () {
   var res = this.ultrasonicSensor.read();
 
-  if(this.debug)
-  {
+  if (this.debug) {
     var text = 'Distance: ' + res;
-    console.log(text); 
+    console.log(text);
   }
 
   return {
-    distance : res
+    distance: res
   }
 }
 
-GrovePiSensors.prototype.getLightData = function()
-{
+GrovePiSensors.prototype.getLightData = function () {
   var res = this.lightSensor.read();
 
-  if(this.debug)
-  {
+  if (this.debug) {
     var text = 'Light: ' + res;
-    console.log(text); 
+    console.log(text);
   }
 
   return {
-    light : res
+    light: res
   }
 }
 
-GrovePiSensors.prototype.getAllSensorsData = function()
-{
-  if(this.debug)
-  {
+GrovePiSensors.prototype.getAllSensorsData = function () {
+  if (this.debug) {
     console.log('Get Sensor Data started');
   }
 
@@ -86,18 +77,17 @@ GrovePiSensors.prototype.getAllSensorsData = function()
   var distanceData = this.getDistanceData();
   var lightData = this.getLightData();
   var soundData = this.getSoundData();
-  
-  if(this.debug)
-  {
+
+  if (this.debug) {
     console.log('Get Sensor Data ended');
   }
 
   return {
-    temp : currentTempAndHumData.temp,
-    humidity : currentTempAndHumData.humidity,
-    distance : distanceData.distance,
-    light : lightData.light,
+    temp: currentTempAndHumData.temp,
+    humidity: currentTempAndHumData.humidity,
+    distance: distanceData.distance,
+    light: lightData.light,
   }
 };
 
-module.exports = GrovePiSensors
+module.exports = GrovePiSensors;
