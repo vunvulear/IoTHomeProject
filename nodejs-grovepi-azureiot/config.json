@@ -3,10 +3,8 @@
     "sensorDataTimeSampleInSec" : 5,
     "deviceCommunicationConfig":
     {
-        // Device name
         "deviceId" : "vunvulearaspberry",
-        // Don't use this version in production. Demo mode only
-        "azureIoTHubMasterConnectionString" : "HostName=vunvulear-iot-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=5tEzlOpIYB6bGXoxWCzWmdLfvoxt3H9fecwP5FBo6lc=",
+        "azureIoTHubMasterConnectionString" : "HostName=vunvulear-iot-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=+whKMyd08PLDNoaR+yEmToJcHL6wsFo36tAyDBU8Qr0=",
         "azureIoTHubHostName" : "vunvulear-iot-hub.azure-devices.net"
     },
     "grovePiConfig":

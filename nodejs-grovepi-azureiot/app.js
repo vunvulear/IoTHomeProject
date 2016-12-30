@@ -17,7 +17,7 @@ var deviceCommunication = new DeviceCommunication(onInit = () => {
         onInit: function (res) {
             if (res) {
                 console.log('GrovePi Version :: ' + board.version())
-                var grovePiSensors = new GrovePiSensors();
+                var grovePiSensors = new GrovePiSensors(Config.grovePiConfig);
                 collectSensorData(grovePiSensors, deviceCommunication);
             }
         }
@@ -28,12 +28,12 @@ var deviceCommunication = new DeviceCommunication(onInit = () => {
 
 function collectSensorData(grovePiSensors, deviceCommunication) {
     var timeIntervalInMilisec = Config.sensorDataTimeSampleInSec * 1000;
-    setInterval((GrovePiSensors, deviceCommunication) => {
+    setInterval((grovePiSensors, deviceCommunication) => {
         var sensorsData = grovePiSensors.getAllSensorsData();
 
         var dataToSend = JSON.stringify({
             deviceId: Config.deviceCommunicationConfig.deviceId,
-            msgType: sensorData,
+            msgType: "sensorData",
             sensorInf: {
                 temp: sensorsData.temp,
                 humidity: sensorsData.humidity,
@@ -43,5 +43,5 @@ function collectSensorData(grovePiSensors, deviceCommunication) {
 
         });
         deviceCommunication.sendMessage(dataToSend);
-    }, timeIntervalInMilisec);
+    }, timeIntervalInMilisec, grovePiSensors, deviceCommunication);
 }
