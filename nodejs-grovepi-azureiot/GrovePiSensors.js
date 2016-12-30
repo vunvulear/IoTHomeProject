@@ -6,12 +6,12 @@ var UltrasonicDigitalSensor = GrovePi.sensors.UltrasonicDigital;
 var LightAnalogSensor = GrovePi.sensors.LightAnalog;
 var AnalogSensor = GrovePi.sensors.base.Analog;
 
-function GrovePiSensors(dhtPin = 2, ultrasonicPin = 4, lightPin = 2, soundPin = 0, debug = true) {
+function GrovePiSensors(config, debug = true) {
   this.debug = debug;
-  this.tempHumSensor = new DHTDigitalSensor(ultrasonicPin);
-  this.ultrasonicSensor = new UltrasonicDigitalSensor(dhtPin);
-  this.lightSensor = new LightAnalogSensor(lightPin);
-  this.soundSensor = new AnalogSensor(soundPin);
+  this.tempHumSensor = new DHTDigitalSensor(config.grovePiConfig.dhtDigitalSensorPin);
+  this.ultrasonicSensor = new UltrasonicDigitalSensor(config.grovePiConfig.ultrasonicDigitalSensorPin);
+  this.lightSensor = new LightAnalogSensor(config.grovePiConfig.lightAnalogSensorPin);
+  this.soundSensor = new AnalogSensor(config.grovePiConfig.soundAnalogSensorPin);
 }
 
 GrovePiSensors.prototype.getSoundData = function () {

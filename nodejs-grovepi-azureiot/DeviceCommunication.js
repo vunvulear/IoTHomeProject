@@ -8,15 +8,13 @@ var Http = require('azure-iot-device-http').Http;
 
 function DeviceCommunication(
   onInit,
-  azureIoTHubConnectionString = 'HostName=vunvulear-iot-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=5tEzlOpIYB6bGXoxWCzWmdLfvoxt3H9fecwP5FBo6lc=',
-  azureIoTHubHostName = 'vunvulear-iot-hub.azure-devices.net',
-  deviceId = 'vunvulearaspberry',
+  config,
   debug = true
 ) {
   this.debug = debug;
-  this.registry = AzureIoTHub.Registry.fromConnectionString(azureIoTHubConnectionString);
-  this.deviceId = deviceId;
-  this.azureIoTHubHostName = azureIoTHubHostName;
+  this.registry = AzureIoTHub.Registry.fromConnectionString(config.azureIoTHubMasterConnectionString);
+  this.deviceId = config.deviceId;
+  this.azureIoTHubHostName = config.azureIoTHubHostName;
 
   this.onInit = onInit;
 

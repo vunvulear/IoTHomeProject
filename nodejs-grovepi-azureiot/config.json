@@ -1,0 +1,19 @@
+{
+    "debug" : true,
+    "sensorDataTimeSampleInSec" : 5,
+    "deviceCommunicationConfig":
+    {
+        // Device name
+        "deviceId" : "vunvulearaspberry",
+        // Don't use this version in production. Demo mode only
+        "azureIoTHubMasterConnectionString" : "HostName=vunvulear-iot-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=5tEzlOpIYB6bGXoxWCzWmdLfvoxt3H9fecwP5FBo6lc=",
+        "azureIoTHubHostName" : "vunvulear-iot-hub.azure-devices.net"
+    },
+    "grovePiConfig":
+    {
+        "dhtDigitalSensorPin" : 2,
+        "ultrasonicDigitalSensorPin" : 4,
+        "lightAnalogSensorPin" : 2,
+        "soundAnalogSensorPin" : 0
+    }
+}
