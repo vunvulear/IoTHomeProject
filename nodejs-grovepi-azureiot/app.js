@@ -7,7 +7,6 @@ var Board = GrovePi.board;
 var DeviceCommunication = require('./DeviceCommunication');
 
 var deviceCommunication = new DeviceCommunication(onInit = () => {
-
     var board = new Board({
         debug: true,
         onError: function (err) {
@@ -24,7 +23,14 @@ var deviceCommunication = new DeviceCommunication(onInit = () => {
 
                     var dataToSend = JSON.stringify({
                         deviceId: 'vunvulearaspberry',
-                        temperature: sensorsData.temp
+                        msgType: sensorData,
+                        sensorInf:{
+                            temp: sensorsData.temp,
+                            humidity: sensorsData.humidity,
+                            distance: sensorsData.distance,
+                            light: sensorsData.light
+                        }
+                        
                     });
                     deviceCommunication.sendMessage(dataToSend);
                 }
