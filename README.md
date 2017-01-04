@@ -1,2 +1,14 @@
-# IoTHomeProject
-A playground where I play with RaspberryPI, GrovePI and Azure Services. 
+A sample application that collectes data from GrovePI sensors and push them to Azure IoT Hub, using Node.JS
+In this moment we have implemented:
+<ls>
+<li>Read Humidity data</li>
+<li>Read Temperature data</li>
+<li>Read Ultrasonic sensor data</li>
+<li>Read Light data</li>
+<li>Read Sound data (not working as expected)</li>
+<li>Module that register devices to Azure IoT Hub</li>
+<li>Module that sends device temp to Azure IoT Hub</li>
+<li>Dashboard build on top of PowerBI</li>
+</ls>
+
+You can find more on my blog: http://vunvulearadu.blogspot.ro/2016/12/iot-home-project-part-3-nodejs-module.html
