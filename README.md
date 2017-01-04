@@ -11,4 +11,19 @@ In this moment we have implemented:
 <li>Dashboard build on top of PowerBI</li>
 </ls>
 
-You can find more on my blog: http://vunvulearadu.blogspot.ro/2016/12/iot-home-project-part-3-nodejs-module.html
+You can find more on my blog:
+<ls>
+<li>[IoT Home Project] Part 1 - Initial Setup : http://vunvulearadu.blogspot.ro/2016/12/iot-home-project-part-1-initial-setup.html</li>
+<li>[IoT Home Project] Part 2 - Visual Studio Code and the first node.js app : http://vunvulearadu.blogspot.ro/2016/12/iot-home-project-part-2-visual-studio.html</li>
+<li>[IoT Home Project] Part 3 - Node.JS Module that reads sensor data : http://vunvulearadu.blogspot.ro/2016/12/iot-home-project-part-3-nodejs-module.html</li>
+<li>[IoT Home Project] Part 4 - Sending temperature data from Raspberry PI to Azure IoT Hub : http://vunvulearadu.blogspot.ro/2016/12/iot-home-project-part-4-sending.html</li>
+<li>[IoT Home Project] Part 5 - Send data to Azure IoT Hub, control time interval and refac the configuration information : http://vunvulearadu.blogspot.ro/2016/12/iot-home-project-part-4-send-data-to.html</li>
+<li>[IoT Home Project] Part 6 - Stream Analytics and Power BI : http://vunvulearadu.blogspot.ro/2017/01/iot-home-project-part-6-stream.html</li>
+<li> : </li>
+<li> : </li>
+<li> : </li>
+<li> : </li>
+<li> : </li>
+<li> : </li>
+<li> : </li>
+</ls>
