@@ -1,17 +1,15 @@
 {
-    "debug" : true,
-    "sensorDataTimeSampleInSec" : 5,
-    "deviceCommunicationConfig":
-    {
-        "deviceId" : "vunvulearaspberry",
-        "azureIoTHubMasterConnectionString" : "HostName=vunvulear-iot-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=+whKMyd08PLDNoaR+yEmToJcHL6wsFo36tAyDBU8Qr0=",
-        "azureIoTHubHostName" : "vunvulear-iot-hub.azure-devices.net"
+    "debug": true,
+    "sensorDataTimeSampleInSec": 5,
+    "deviceCommunicationConfig": {
+        "deviceId": "vunvulearaspberry",
+        "azureIoTHubMasterConnectionString": "HostName=vunvulear-iot-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=+whKMyd08PLDNoaR+yEmToJcHL6wsFo36tAyDBU8Qr0=",
+        "azureIoTHubHostName": "vunvulear-iot-hub.azure-devices.net"
     },
-    "grovePiConfig":
-    {
-        "dhtDigitalSensorPin" : 2,
-        "ultrasonicDigitalSensorPin" : 4,
-        "lightAnalogSensorPin" : 2,
-        "soundAnalogSensorPin" : 0
+    "grovePiConfig": {
+        "dhtDigitalSensorPin": 4,
+        "ultrasonicDigitalSensorPin": 2,
+        "lightAnalogSensorPin": 2,
+        "soundAnalogSensorPin": 0
     }
 }

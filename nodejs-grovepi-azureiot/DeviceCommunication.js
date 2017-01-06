@@ -1,13 +1,12 @@
 var AzureIoTHub = require('azure-iothub');
-var Protocol = require('azure-iot-device-amqp').Amqp;
+var Protocol = require('azure-iot-device-mqtt').Mqtt;
 var Device = require('azure-iot-device');
 var Client = Device.Client;
 var Message = Device.Message;
-var Http = require('azure-iot-device-http').Http;
-
 
 function DeviceCommunication(
   onInit,
+  onAppConfigurationUpdate,
   config,
   debug = true
 ) {
@@ -62,7 +61,7 @@ DeviceCommunication.prototype.sendMessage = function (messageJson) {
   client.sendEvent(message, printSendMessageStatus.bind(this));
 }
 
-DeviceCommunication.prototype.getDeviceClient = function() {
+DeviceCommunication.prototype.getDeviceClient = function () {
   var deviceConnectionString = this.getDeviceConnectionString();
   return Client.fromConnectionString(deviceConnectionString, Protocol);
 }
@@ -79,6 +78,35 @@ function printSendMessageStatus(err, res) {
   if (res && this.debug) {
     console.log('Message status ' + res.statusCode + ' ' + res.statusMessage);
   }
+}
+
+DeviceCommunication.prototype.getTwin = function () {
+  var client = this.getDeviceClient();
+  var self = this;
+  client.getTwin((err, twin) => {
+    if (err) {
+      console.log('could not get twin:' + err);
+    } else {
+      // At first run we read the desired values and persist them locally. 
+      if (typeof twin.properties.desired.sensorDataTimeSampleInSec !== 'undefined' && twin.properties.desired.sensorDataTimeSampleInSec) {
+        onAppConfigurationUpdate(twin.properties.desired.sensorDataTimeSampleInSec)
+      } else {
+        if (self.debug) {
+          console.log('No sensor data time sample specified by the backend in device twin');
+        }
+      }
+
+      // Rgister to device twin change
+      twin.on('properties.desired', (desiredChange) => {
+        if (self.debug) {
+          console.log("Twin updated:" + JSON.stringify(desiredChange));
+        }
+        if (typeof desiredChange.sensorDataTimeSampleInSec !== 'undefined' && desiredChange.sensorDataTimeSampleInSec) {
+          onAppConfigurationUpdate(desiredChange.sensorDataTimeSampleInSec)
+        }
+      });
+    }
+  });
 }
 
 module.exports = DeviceCommunication;
