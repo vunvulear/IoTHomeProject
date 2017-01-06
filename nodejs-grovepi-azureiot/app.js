@@ -11,7 +11,18 @@ var Board = GrovePi.board;
 var collectSensorInterval;
 
 var deviceCommunication = new DeviceCommunication(onInit = () => {
-        //deviceCommunication.getTwin();
+        deviceCommunication.listenToDeviceTwinUpdates((sensorDataTimeSampleInSec) => {
+        // Update configuration 
+        Config.sensorDataTimeSampleInSec = sensorDataTimeSampleInSec;
+
+        // Update configuration file.
+        Jsonfile.spaces = 4
+        Jsonfile.writeFileSync('./config.json', Config);
+
+        clearInterval(collectSensorInterval);
+        var grovePiSensors = new GrovePiSensors(Config.grovePiConfig);
+        collectSensorData(grovePiSensors, deviceCommunication);
+    });
         var board = new Board({
             debug: true,
             onError: function (err) {
@@ -28,19 +39,6 @@ var deviceCommunication = new DeviceCommunication(onInit = () => {
         })
 
         board.init();
-        deviceCommunication.getTwin();
-    },
-    onAppConfigurationUpdate = (sensorDataTimeSampleInSec) => {
-        // Update configuration 
-        Config.sensorDataTimeSampleInSec = sensorDataTimeSampleInSec;
-
-        // Update configuration file.
-        Jsonfile.spaces = 4
-        Jsonfile.writeFileSync('./config.json', Config);
-
-        clearInterval(collectSensorInterval);
-        var grovePiSensors = new GrovePiSensors(Config.grovePiConfig);
-        collectSensorData(grovePiSensors, deviceCommunication);
     }, Config.deviceCommunicationConfig);
 
 function collectSensorData(grovePiSensors, deviceCommunication) {

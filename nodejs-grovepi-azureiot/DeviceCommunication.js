@@ -6,7 +6,6 @@ var Message = Device.Message;
 
 function DeviceCommunication(
   onInit,
-  onAppConfigurationUpdate,
   config,
   debug = true
 ) {
@@ -80,7 +79,7 @@ function printSendMessageStatus(err, res) {
   }
 }
 
-DeviceCommunication.prototype.getTwin = function () {
+DeviceCommunication.prototype.listenToDeviceTwinUpdates = function (onAppConfigurationUpdate) {
   var client = this.getDeviceClient();
   var self = this;
   client.getTwin((err, twin) => {
