@@ -1,5 +1,5 @@
 var AzureIoTHub = require('azure-iothub');
-var Protocol = require('azure-iot-device-mqtt').Mqtt;
+var Protocol = require('azure-iot-device-mqtt').Mqtt; // !!! This is new. Otherwise we don't have support for twin
 var Device = require('azure-iot-device');
 var Client = Device.Client;
 var Message = Device.Message;
@@ -88,7 +88,8 @@ DeviceCommunication.prototype.listenToDeviceTwinUpdates = function (onAppConfigu
     } else {
       // At first run we read the desired values and persist them locally. 
       if (typeof twin.properties.desired.sensorDataTimeSampleInSec !== 'undefined' && twin.properties.desired.sensorDataTimeSampleInSec) {
-        onAppConfigurationUpdate(twin.properties.desired.sensorDataTimeSampleInSec)
+        onAppConfigurationUpdate(twin.properties.desired.sensorDataTimeSampleInSec);
+        deviceTwinReportUpdated(twin.properties.desired.sensorDataTimeSampleInSec, twin);
       } else {
         if (self.debug) {
           console.log('No sensor data time sample specified by the backend in device twin');
@@ -101,9 +102,23 @@ DeviceCommunication.prototype.listenToDeviceTwinUpdates = function (onAppConfigu
           console.log("Twin updated:" + JSON.stringify(desiredChange));
         }
         if (typeof desiredChange.sensorDataTimeSampleInSec !== 'undefined' && desiredChange.sensorDataTimeSampleInSec) {
-          onAppConfigurationUpdate(desiredChange.sensorDataTimeSampleInSec)
+          onAppConfigurationUpdate(desiredChange.sensorDataTimeSampleInSec);
+          deviceTwinReportUpdated(twin.properties.desired.sensorDataTimeSampleInSec, twin);
         }
       });
+    }
+  });
+}
+
+function deviceTwinReportUpdated(sensorDataTimeSampleInSec, twin) {
+  var patch = {
+    sensorDataTimeSampleInSec: sensorDataTimeSampleInSec
+  };
+  twin.properties.reported.update(patch, function (err) {
+    if (err && this.debug) {
+      console.log('Error reporting properties: ' + err);
+    } else {
+      console.log('Device Twin report completed: ' + JSON.stringify(patch));
     }
   });
 }
