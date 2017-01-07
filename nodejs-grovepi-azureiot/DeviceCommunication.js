@@ -1,5 +1,5 @@
 var AzureIoTHub = require('azure-iothub');
-var Protocol = require('azure-iot-device-mqtt').Mqtt; // !!! This is new. Otherwise we don't have support for twin
+var Protocol = require('azure-iot-device-mqtt').Mqtt; 
 var Device = require('azure-iot-device');
 var Client = Device.Client;
 var Message = Device.Message;
