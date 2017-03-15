@@ -1,0 +1,3 @@
+﻿function hideOnLoad() {
+    $('#heatingPumpAnimation').hide();
+}

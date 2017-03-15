@@ -1,0 +1,6 @@
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\vunvulea-iot-core\bin\Debug\netcoreapp1.1\vunvulea-iot-core.deps.json
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\vunvulea-iot-core\bin\Debug\netcoreapp1.1\vunvulea-iot-core.dll
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\vunvulea-iot-core\bin\Debug\netcoreapp1.1\vunvulea-iot-core.pdb
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\vunvulea-iot-core\obj\Debug\netcoreapp1.1\vunvulea-iot-core.AssemblyInfo.cs
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\vunvulea-iot-core\obj\Debug\netcoreapp1.1\vunvulea-iot-core.dll
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\vunvulea-iot-core\obj\Debug\netcoreapp1.1\vunvulea-iot-core.pdb

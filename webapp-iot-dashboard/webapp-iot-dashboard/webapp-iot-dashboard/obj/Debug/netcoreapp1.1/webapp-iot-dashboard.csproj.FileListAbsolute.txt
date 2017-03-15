@@ -1,0 +1,11 @@
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\bin\Debug\netcoreapp1.1\webapp-iot-dashboard.deps.json
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\bin\Debug\netcoreapp1.1\webapp-iot-dashboard.runtimeconfig.json
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\bin\Debug\netcoreapp1.1\webapp-iot-dashboard.runtimeconfig.dev.json
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\bin\Debug\netcoreapp1.1\webapp-iot-dashboard.dll
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\bin\Debug\netcoreapp1.1\webapp-iot-dashboard.pdb
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\bin\Debug\netcoreapp1.1\vunvulea-iot-core.dll
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\bin\Debug\netcoreapp1.1\vunvulea-iot-core.pdb
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\obj\Debug\netcoreapp1.1\webapp-iot-dashboard.csprojResolveAssemblyReference.cache
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\obj\Debug\netcoreapp1.1\webapp-iot-dashboard.AssemblyInfo.cs
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\obj\Debug\netcoreapp1.1\webapp-iot-dashboard.dll
+C:\Repos\IoTHomeProject\webapp-iot-dashboard\webapp-iot-dashboard\webapp-iot-dashboard\obj\Debug\netcoreapp1.1\webapp-iot-dashboard.pdb

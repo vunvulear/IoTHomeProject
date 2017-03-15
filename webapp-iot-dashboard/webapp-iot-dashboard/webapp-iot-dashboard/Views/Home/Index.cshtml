@@ -1,0 +1,17 @@
+﻿@model webapp_iot_dashboard.Model.HomeModel
+@{
+    ViewData["Title"] = "Home Dashboard";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Heating system</h2>
+        <div>
+            Current temperature is set to: @Html.DisplayFor(model => model.CurrentTemperature);
+        </div>
+        <div>
+            Minimum temperature is set to: @Html.DisplayFor(model => model.MinimumTemperature);
+        </div>
+        <img src="~/images/electric-boosted-animation.gif" style="display:@(Model.IsHeatingSystemRunning?"block":"none")"  />
+    </div>
+</div>
