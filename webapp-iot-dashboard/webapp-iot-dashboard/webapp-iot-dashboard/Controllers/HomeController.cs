@@ -10,12 +10,9 @@ namespace webapp_iot_dashboard.Controllers
 {
     public class HomeController : Controller
     {
-        // This shall not be never here.
-        private const string StorageConnectionString = "@@@@";
-
         public async Task<IActionResult> Index()
         {
-            SystemStatus systemStatus = new SystemStatus(StorageConnectionString);
+            SystemStatus systemStatus = new SystemStatus();
 
             HomeModel homeModel = new HomeModel()
             {

@@ -7,11 +7,11 @@
     <div class="col-md-3">
         <h2>Heating system</h2>
         <div>
-            Current temperature is set to: @Html.DisplayFor(model => model.CurrentTemperature);
+            Current temperature is set to: <b id="currentTemperature">@(Html.DisplayFor(model => model.CurrentTemperature))</b>
         </div>
         <div>
-            Minimum temperature is set to: @Html.DisplayFor(model => model.MinimumTemperature);
-        </div>
-        <img src="~/images/electric-boosted-animation.gif" style="display:@(Model.IsHeatingSystemRunning?"block":"none")"  />
+            Minimum temperature is set to: <b id="minimumTemperature">@(Html.DisplayFor(model => model.MinimumTemperature))</b>
+        </b>
+        <img id="heatingPumpAnimation" src="~/images/electric-boosted-animation.gif" style="display:@(Model.IsHeatingSystemRunning?"block":"none")"  />
     </div>
 </div>

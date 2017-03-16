@@ -18,7 +18,9 @@ namespace vunvulea_iot_core
         private readonly CloudTableClient tableClient;
         private readonly CloudTable systemStatusTable;
 
-        public SystemStatus(string storageConnectionString)
+        // Connection string shall never be hardcoded here.
+        public SystemStatus(string storageConnectionString =
+            "@@@")
         {
             storageAccount = CloudStorageAccount.Parse(storageConnectionString);
             tableClient = storageAccount.CreateCloudTableClient();
