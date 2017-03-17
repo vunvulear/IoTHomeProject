@@ -36,6 +36,13 @@ INTO
     outputSensorDataConsolidatedTableStorage
 FROM
     avgdata
+    
+SELECT 
+    *
+INTO 
+    outputSensorDataTopic
+FROM
+    avgdata
 
 SELECT 
     *
