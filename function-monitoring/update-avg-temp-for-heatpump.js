@@ -11,7 +11,7 @@ module.exports = function (context, myQueueItem) {
             var entityToUpdate = new Object();
             entityToUpdate.PartitionKey = "system";
             entityToUpdate.RowKey = "currenttemperature";
-            entityToUpdate.Status = myQueueItem.avgtemp.toString();
+            entityToUpdate.Status = myQueueItem.avgtemp;
 
             tableSvc.insertOrReplaceEntity('systemstatus', entityToUpdate, function (error, result, response) {
                 if (!error) {
