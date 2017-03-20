@@ -1,10 +1,4 @@
-﻿//using Microsoft.Framework.Configuration;
-//using Microsoft.WindowsAzure.Storage;
-//using Microsoft.WindowsAzure.Storage.Table;
-//using System.Threading.Tasks;
-//using LogLevel = Microsoft.Framework.Logging.LogLevel;
-
-using Microsoft.WindowsAzure.Storage;
+﻿using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using System;
 using System.Threading.Tasks;
@@ -19,7 +13,7 @@ namespace vunvulea_iot_core
         private readonly CloudTable systemStatusTable;
 
         public SystemStatus(string storageConnectionString =
-            "DefaultEndpointsProtocol=https;AccountName=vunvuleariotstorage;AccountKey=GmmafAcfKQBw3O+7l8xtGdtYt5/PnkIGHmJHy7YkD26VYrmQkrvzENGfBzxuudmFrMmyKf1gt7+vXQA80kemKw==;")
+            "@@@")
         {
             storageAccount = CloudStorageAccount.Parse(storageConnectionString);
             tableClient = storageAccount.CreateCloudTableClient();

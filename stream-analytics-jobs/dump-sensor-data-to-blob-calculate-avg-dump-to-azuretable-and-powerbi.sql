@@ -35,7 +35,7 @@ SELECT
 INTO 
     outputSensorDataConsolidatedTableStorage
 FROM
-    avgdata
+	avgdata
     
 SELECT 
     *

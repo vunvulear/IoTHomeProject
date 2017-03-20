@@ -11,7 +11,21 @@
         </div>
         <div>
             Minimum temperature is set to: <b id="minimumTemperature">@(Html.DisplayFor(model => model.MinimumTemperature))</b>
-        </b>
-        <img id="heatingPumpAnimation" src="~/images/electric-boosted-animation.gif" style="display:@(Model.IsHeatingSystemRunning?"block":"none")"  />
+            <div>
+                Heating system status: <b id="isHeatingSystemRunning">@(Model.IsHeatingSystemRunning ? "ON" : "OFF")</b>
+            </div>
+            <div style="min-height:200px">
+                <img id="heatingPumpAnimation" src="~/images/electric-boosted-animation.gif" style="display:@(Model.IsHeatingSystemRunning?"block":"none")" height="200" />
+            </div>
+        </div>
+    </div>
+    <div @*class="col-md-3" *@>
+        <h2>Thief Alarm</h2>
+        <div>
+            Alarm status: <b id="thiefAlarmStatus">@(Model.AlarmStatus? "ARMED" : "ACTIVE")</b>
+        </div>
+        <div>          
+            <img id="thiefAlarm" src="~/images/@(Model.AlarmStatus?"house-alarm.jpg":"house-secure.png")" height="200" />
+        </div>
     </div>
 </div>

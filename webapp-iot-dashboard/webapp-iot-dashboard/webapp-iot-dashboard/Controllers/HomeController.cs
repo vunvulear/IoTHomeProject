@@ -18,6 +18,7 @@ namespace webapp_iot_dashboard.Controllers
             {
                 CurrentTemperature = await systemStatus.GetCurrentSystemStatusAsync(SystemStatusType.CurrentTemperature),
                 MinimumTemperature = await systemStatus.GetCurrentSystemStatusAsync(SystemStatusType.MinimumTemperature),
+                AlarmStatus = bool.Parse(await systemStatus.GetCurrentSystemStatusAsync(SystemStatusType.MotionDetectorOn)),
             };
 
             return View(homeModel);

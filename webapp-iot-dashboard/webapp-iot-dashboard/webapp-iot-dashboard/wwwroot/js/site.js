@@ -13,12 +13,35 @@ window.setInterval(function () {
     document.getElementById("currentTemperature").innerHTML = currentTemp;
     document.getElementById("minimumTemperature").innerHTML = minTemp;
 
-    var heatingPumpAnimation = document.getElementById("heatingPumpAnimation");    
+    var heatingPumpAnimation = document.getElementById("heatingPumpAnimation");
+    var isHeatingSystemRunning = document.getElementById("isHeatingSystemRunning");
     if (currentTemp <= minTemp)
     {
         heatingPumpAnimation.style.display = "block";
+        isHeatingSystemRunning.innerText = "ON";
+
     } else {
         heatingPumpAnimation.style.display = "none";
+        isHeatingSystemRunning.innerText = "OFF";
     }
+    
+    var motionDetectorOn = httpGet("api/SystemStatus/MotionDetectorOn");
+    var motionImgSrc = null;
+    var alarmtStatus = null;
+    if (motionDetectorOn === "true")
+    {        
+        motionImgSrc = "/images/house-alarm.jpg";
+        alarmtStatus = "ACTIVE";
+    } else {
+        motionImgSrc = "/images/house-secure.png";   
+        alarmtStatus = "ARMED";
+    }
+    var thiefAlarmImg = document.getElementById("thiefAlarm");
+    thiefAlarmImg.src = motionImgSrc;
 
-}, 1000);
+    var alarmStatusTxt = document.getElementById("thiefAlarmStatus");
+    alarmStatusTxt.innerText = alarmtStatus;
+
+    
+
+}, 3000);

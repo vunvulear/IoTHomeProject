@@ -11,5 +11,7 @@ namespace webapp_iot_dashboard.Model
         public string CurrentTemperature { get; set; }
 
         public bool IsHeatingSystemRunning => Convert.ToDecimal(MinimumTemperature) <= Convert.ToDecimal(CurrentTemperature);
+
+        public bool AlarmStatus { get; set; }
     }
 }

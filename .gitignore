@@ -1,1 +1,8 @@
 webapp-iot-portal/src/webapp-iot-portal/Properties/PublishProfiles/vunvulear-iot-portal - Web Deploy.pubxml.user
+/.vs/IoTHomeProject/v15/Browse.VC.opendb
+*.opendb
+/.vs/IoTHomeProject/v15
+/webapp-iot-dashboard/webapp-iot-dashboard/vunvulea-iot-core/obj/Release/netcoreapp1.1
+/webapp-iot-dashboard/webapp-iot-dashboard/vunvulea-iot-core/obj/Release/netcoreapp1.1
+/webapp-iot-dashboard/webapp-iot-dashboard/webapp-iot-dashboard/obj/Release/netcoreapp1.1
+/webapp-iot-dashboard/webapp-iot-dashboard/webapp-iot-dashboard/obj/Release/netcoreapp1.1
